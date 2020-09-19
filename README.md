@@ -36,7 +36,7 @@ https://developer.nytimes.com/.
 # Functionality
 
 This collection of scripts uses the New York Times API in order to collect the latest
-best-seller lists, and associated data, in a variety of mediums.*
+best-seller lists, and associated data, in a variety of mediums.
 
 Data collected includes:
 - Title
@@ -55,7 +55,7 @@ Mediums Included:
 - Picture Books
 - Etc. (See NYTBS.ini File for Full Fist)
 
-*Data accuracy is dependent on the updating and maintaining of the API.*
+        Note: Data accuracy is dependent on the updating and maintaining of the API.
 
 
 # What Exactly Do These Scripts Do
@@ -75,9 +75,9 @@ for easy copy and paste website display. These files are overwritten by default 
 script is run.
 
 A simple log file is also created which includes information about the success of the query to the
-API and a time stamp.*
+API and a time stamp.
 
-*A more verbose logging system is currently under development.
+        Note: A more verbose logging system is currently under development.
 
 
 # Set Up
@@ -103,14 +103,14 @@ Step 4 : Go to the [BS_LISTS] section and comment out any best seller lists you 
 Step 5 : Go to the [DATA_STRUCTURE] section and comment out the formats you do not wish to
          generate. The script will create a seperate file for each format uncommented.
          
-         *Note: One the initial running of the script, the 'SAVE_PAST_LISTS' line must be
-         *      commented out or set to False or a 'file not found' error will occur. After the
-         *      initial running of the program this may be uncommented and set to True in order
-         *      to save past lists.
+         Note: One the initial running of the script, the 'SAVE_PAST_LISTS' line must be
+               commented out or set to False or a 'file not found' error will occur. After the
+               initial running of the program this may be uncommented and set to True in order
+               to save past lists.
 
 Step 6 : Run the script 'NYTBS_List_Generatory.py'.
      
-         *Note: If the script executes successfully, a file for each of the lists uncommented
+          Note: If the script executes successfully, a file for each of the lists uncommented
                 in the NYTBS.ini file will be written in the directory.
                 
 End.
