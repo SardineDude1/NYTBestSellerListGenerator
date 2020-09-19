@@ -71,15 +71,46 @@ These scripts produce multiple text files, one for each list in the NYTBS.ini fi
 will show up in the source code directory.
 
 These text files contain the best seller information. Data in these files can be written in html
-for easy copy and paste website display.* These files are overwritten by default every time the
-script is run.** 
-
-*CSV format and basic formatted text files are currently under development.*
-
-**An option to have previous files archived is currently under development.**
-
+for easy copy and paste website display. These files are overwritten by default every time the
+script is run.
 
 A simple log file is also created which includes information about the success of the query to the
-API and a time stamp.***
+API and a time stamp.*
 
-***A more verbose logging system is currently under development.***
+*A more verbose logging system is currently under development.
+
+
+# Set Up
+
+In order for this script to work properly, you must complete the setup process.
+
+Step 1 : Download the complete directory containing files:
+    - LICENSE 
+    - NYTBS.ini
+    - README.dm
+    - NYTBS_List_Generator.py
+
+Step 2 : Open NYTBS.ini in a text editor and enter in your New York Times Developer API Key
+         by replacing the 'your-api-key' value.
+          
+Step 3 : Go to the [METADATA] section and comment out (place the '#' symbol at the begining
+         of the line) any metadata you do not wish to capture.
+         
+Step 4 : Go to the [BS_LISTS] section and comment out any best seller lists you do not wish to
+         capture.
+         DO NOT CHANGE ANYTHING ELSE IN THIS SECTION.
+         
+Step 5 : Go to the [DATA_STRUCTURE] section and comment out the formats you do not wish to
+         generate. The script will create a seperate file for each format uncommented.
+         
+         *Note: One the initial running of the script, the 'SAVE_PAST_LISTS' line must be
+         *      commented out or set to False or a 'file not found' error will occur. After the
+         *      initial running of the program this may be uncommented and set to True in order
+         *      to save past lists.
+
+Step 6 : Run the script 'NYTBS_List_Generatory.py'.
+     
+         *Note: If the script executes successfully, a file for each of the lists uncommented
+                in the NYTBS.ini file will be written in the directory.
+                
+End.
