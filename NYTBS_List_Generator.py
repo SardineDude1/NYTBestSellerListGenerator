@@ -33,7 +33,7 @@ def Query_NYT_BS(e_name, api_key, metadata):
 
     else:
         t = time.localtime()
-        with open("NYTBS_log.txt", "a") as file:
+        with open("NYTBS_log.txt", "a", encoding='utf-8') as file:
             file.write("Failed. Request status code: " + str(book_req.status_code) + ". " + e_name + ". \t\t\t TIME:" + str(time.strftime("%H:%M:%S", t)) + "\n")
             file.close()
     return item_list
