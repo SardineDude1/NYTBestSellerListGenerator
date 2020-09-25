@@ -95,7 +95,7 @@ def write_to_file(list_of_metadata_dicts, list_name, data_key):
                 list_info.append(str(key) + ': ' + str(dictionary[key]) + '\n')
                 
             # write the content of the list to a text file with the same name as the best seller list name.
-            with open('%s.txt' %list_name, 'a') as f:
+            with open('%s.txt' %list_name, 'a', encoding='utf-8') as f:
                 f.writelines(list_info)
                 f.write('\n')
             f.close()
@@ -127,7 +127,7 @@ def write_to_file(list_of_metadata_dicts, list_name, data_key):
             list_info.append("<div align=\"center\"><h3>" + title.upper() + "<br>by<br>" + author + "<br>Weeks on List: " + str(weeks_on_list) + "</h3><b>" + description + "</b><br><br><a href=\"https://sjcpl.bibliocommons.com/v2/search?query=" + title.replace(" ", "+").lower() + "&searchType=title\"><img type=\"image\" height=\"200\" width=\"150\" src=\"" + img + "\"</img></a></div>")
                 
             # write the content of the list to a text file with the same name as the best seller list name.
-            with open('%s_html.txt' %list_name, 'a') as f:
+            with open('%s_html.txt' %list_name, 'a', encoding='utf-8') as f:
                 f.writelines(list_info)
                 f.write('\n')
             f.close()
@@ -142,7 +142,7 @@ def write_to_file(list_of_metadata_dicts, list_name, data_key):
                 list_info.append(str(dictionary[key]) + ', ')
                 
             # write the content of the list to a text file with the same name as the best seller list name.
-            with open('%s_csv.txt' %list_name, 'a') as f:
+            with open('%s_csv.txt' %list_name, 'a', encoding='utf-8') as f:
                 f.writelines(list_info)
                 f.write('\n')
             f.close()
@@ -189,27 +189,14 @@ for key in data_form:
 for i in list_data:
 	list_of_metadata_dicts = Query_NYT_BS(list_data[i], api['api key'], metadata_key)
 	write_to_file(list_of_metadata_dicts, list_data[i], data_key)
-	time.sleep(1)
+
+        # In order to avoid 429 error codes NYT recommends a wait time of 6 secs between requests.
+	time.sleep(6)
 
 
 t = time.localtime()
-with open("NYTBS_log.txt", "a") as file:
-    file.write("STATUS: Success\t\tTIME:" + time.strftime("%H:%M:%S", t) + "\n")
+with open("NYTBS_log.txt", "a", encoding='utf-8') as file:
+    file.write("STATUS: Completed Requests\t\tTIME:" + time.strftime("%H:%M:%S", t) + "\n")
     file.close()
 
 print("Done.")
-
-
-
-#############################################################
-# TO FIX:
-'''
-Traceback (most recent call last):
-  File "C:\Users\Staff\Desktop\Scripts\NewYorkTimesBestSellerLists_Testing\NYTBS_List_Generator.py", line 191, in <module>
-    write_to_file(list_of_metadata_dicts, list_data[i], data_key)
-  File "C:\Users\Staff\Desktop\Scripts\NewYorkTimesBestSellerLists_Testing\NYTBS_List_Generator.py", line 99, in write_to_file
-    f.writelines(list_info)
-  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.8_3.8.1520.0_x64__qbz5n2kfra8p0\lib\encodings\cp1252.py", line 19, in encode
-    return codecs.charmap_encode(input,self.errors,encoding_table)[0]
-UnicodeEncodeError: 'charmap' codec can't encode character '\u2009' in position 118: character maps to <undefined>
-'''
