@@ -93,7 +93,7 @@ Step 1 : Download the complete directory containing files:
 Step 2 : Open NYTBS.ini in a text editor and enter in your New York Times Developer API Key
          by replacing the 'your-api-key' value.
           
-Step 3 : Go to the [METADATA] section and comment out (place the '#' symbol at the begining
+Step 3 : Go to the [METADATA] section and comment out (place the '#' symbol at the beginning
          of the line) any metadata you do not wish to capture.
          
 Step 4 : Go to the [BS_LISTS] section and comment out any best seller lists you do not wish to
@@ -101,7 +101,7 @@ Step 4 : Go to the [BS_LISTS] section and comment out any best seller lists you 
          DO NOT CHANGE ANYTHING ELSE IN THIS SECTION.
          
 Step 5 : Go to the [DATA_STRUCTURE] section and comment out the formats you do not wish to
-         generate. The script will create a seperate file for each format uncommented.
+         generate. The script will create a separate file for each format uncommented.
          
          Note: One the initial running of the script, the 'SAVE_PAST_LISTS' line must be
                commented out or set to False or a 'file not found' error will occur. After the
@@ -113,4 +113,9 @@ Step 6 : Run the script 'NYTBS_List_Generatory.py'.
           Note: If the script executes successfully, a file for each of the lists uncommented
                 in the NYTBS.ini file will be written in the directory.
                 
-End.
+# Contact
+For any questions/concerns contact:
+
+Sardinedude1dev@gmail.com
+
+Please be patient as I am a human being with other things that occupy my time occasionally.
