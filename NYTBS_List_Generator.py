@@ -124,7 +124,7 @@ def write_to_file(list_of_metadata_dicts, list_name, data_key):
                 if key == "book_image":
                     img = dictionary[key]
                     
-            list_info.append("<div align=\"center\"><h3>" + title.upper() + "<br>by<br>" + author + "<br>Weeks on List: " + str(weeks_on_list) + "</h3><b>" + description + "</b><br><br><a href=\"https://sjcpl.bibliocommons.com/v2/search?query=" + title.replace(" ", "+").lower() + "&searchType=title\"><img type=\"image\" height=\"200\" width=\"150\" src=\"" + img + "\"</img></a></div>")
+            list_info.append("<div align=\"center\"><h3>" + title.upper() + "<br>by<br>" + author + "<br>Weeks on List: " + str(weeks_on_list) + "</h3><b>" + description + "</b><br><br><img type=\"image\" height=\"200\" width=\"150\" src=\"" + img + "\"</img></div>")
                 
             # write the content of the list to a text file with the same name as the best seller list name.
             with open('%s_html.txt' %list_name, 'a', encoding='utf-8') as f:
