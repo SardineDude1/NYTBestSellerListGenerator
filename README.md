@@ -45,7 +45,6 @@ Data collected includes:
 - Cover Image Source
 - Description
 - Number of Weeks on the Bestseller List
-- Link to Website Holdings of Item (Searched by ISBN)
 - Etc. (See NYTBS.ini File for Full Fist)
 
 Mediums Included:
